@@ -1,7 +1,7 @@
 {
-  "min_required_version": "1.0.0",
+  "min_required_version": "2.0.0",
   "latest_version": "1.0.10",
-  "force_update": false,
+  "force_update": true,
   "update_url_ios": "https://apps.apple.com/app/id6809561436",
   "update_url_android": "https://play.google.com/store/apps/details?id=com.cfeimster24.busybees",
   "message": "A critical update is available. Please update BusyBees to continue using the app."
