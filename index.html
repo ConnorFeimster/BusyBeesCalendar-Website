@@ -6,22 +6,152 @@
     <meta name="google-site-verification" content="RZ1_PFG1whjnaEzr4DCN541BhTjq-xk9K0EvVW676PU" />
     <title>Derezz Digital LLC | BusyBees Calendar</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 50px 20px; background-color: #f9f9f9; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        h1 { margin-bottom: 10px; color: #111; }
-        p { line-height: 1.6; color: #555; }
-        .footer { margin-top: 30px; font-size: 0.9em; color: #888; }
+        :root {
+            --bg-cream: #FFF8EA;
+            --honeycomb-gold: #F9C868;
+            --honeycomb-border: #EBB042;
+            --calendar-pink: #F7A8B8;
+            --text-dark: #2C2825;
+            --text-muted: #665E57;
+            --card-white: #FFFFFF;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            text-align: center; 
+            padding: 40px 20px; 
+            background-color: var(--bg-cream); 
+            color: var(--text-dark); 
+            margin: 0;
+        }
+
+        .container { 
+            max-width: 640px; 
+            margin: 0 auto; 
+            background: var(--card-white); 
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(235, 176, 66, 0.15); 
+            border: 2px solid var(--honeycomb-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-graphic {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px auto;
+        }
+
+        h1 { 
+            margin: 10px 0 5px 0; 
+            color: var(--text-dark); 
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--honeycomb-border);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        p { 
+            line-height: 1.6; 
+            color: var(--text-muted); 
+            font-size: 1rem;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background-color: var(--calendar-pink);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            text-align: left;
+            background: var(--bg-cream);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px dashed var(--honeycomb-border);
+        }
+
+        .features ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .features li {
+            margin-bottom: 8px;
+        }
+
+        .contact-box {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--bg-cream);
+        }
+
+        a {
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--honeycomb-gold);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--honeycomb-border);
+        }
+
+        .footer { 
+            margin-top: 30px; 
+            font-size: 0.85em; 
+            color: var(--text-muted); 
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Honeycomb & Bee SVG Graphic -->
+        <svg class="header-graphic" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 85,25 85,65 50,85 15,65 15,25" fill="#F9C868" stroke="#EBB042" stroke-width="3"/>
+            <path d="M35 45 C 35 30, 65 30, 65 45 C 65 60, 50 65, 50 75" stroke="#F7A8B8" stroke-width="4" stroke-dasharray="3 3" fill="none"/>
+            <circle cx="50" cy="75" r="4" fill="#F7A8B8"/>
+        </svg>
+
         <h1>Derezz Digital LLC</h1>
-        <p>Welcome to Derezz Digital LLC, creators of <strong>BusyBees Calendar</strong>.</p>
-        <p>BusyBees Calendar is a mobile scheduling and organization platform designed for families.</p>
-        <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-        <h3>Support & Contact</h3>
-        <p>For support, inquiries, or privacy details, reach out to us at:<br>
-        <a href="mailto:derezzdigital@gmail.com">derezzdigital@gmail.com</a></p>
+        <div class="subtitle">Building Software for Families</div>
+
+        <span class="badge-pill">Featured Release</span>
+        
+        <h2>BusyBees Calendar</h2>
+        <p>A simple, local-first family scheduling and wall calendar application designed for smooth household coordination.</p>
+
+        <div class="features">
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Color-coded family schedules & event tracking</li>
+                <li>Customizable task checklists and shared household lists</li>
+                <li>Designed for tablets, mobile screens, and kitchen displays</li>
+                <li>Private by design with local storage sync</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <h3>Support & Inquiries</h3>
+            <p>Need assistance or have feedback? Contact our team at:<br>
+            <a href="mailto:support@derezzdigital.com">support@derezzdigital.com</a> or 
+            <a href="mailto:contact@derezzdigital.com">contact@derezzdigital.com</a></p>
+        </div>
+
         <div class="footer">
             &copy; 2026 Derezz Digital LLC. All rights reserved.
         </div>
