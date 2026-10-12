@@ -1,484 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busy Bees - Keeping Your Household Organized</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#FAF5EA',
-                            card: '#FFFDF9',
-                            yellow: '#F59E0B',
-                            gold: '#EAB308',
-                            warmLight: '#FEF3C7',
-                            honeycomb: '#FDE68A',
-                            pinkAccent: '#F472B6',
-                            pinkSoft: '#FCE7F3',
-                            dark: '#292524',
-                            slate: '#57534E'
-                        }
-                    },
-                    fontFamily: {
-                        display: ['Fredoka', 'sans-serif'],
-                        body: ['Plus Jakarta Sans', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #FAF5EA;
-            color: #292524;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busy Bees Calendar - Keeping Your Household Organized</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="./assets/BusyB_Logo_iOS.png" />
+  <link rel="apple-touch-icon" href="./assets/BusyB_Logo_iOS.png" />
 
-        h1, h2, h3, .font-display {
-            font-family: 'Fredoka', sans-serif;
-        }
+  <!-- Fonts & Google Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-        /* Subtle SVG Honeycomb Background Pattern */
-        .honeycomb-pattern {
-            background-color: #FAF5EA;
-            background-image: radial-gradient(#FDE68A 1.5px, transparent 1.5px), radial-gradient(#FDE68A 1.5px, #FAF5EA 1.5px);
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
-            opacity: 0.85;
-        }
+  <style>
+    :root {
+      --bg-warm: #fdf6e2;
+      --brand-yellow: #f59e0b;
+      --brand-yellow-hover: #d97706;
+      --brand-black: #0f172a;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(15,23,42,0.08);
+    }
 
-        .hero-banner-bg {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FAF5EA 50%, #FCE7F3 100%);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .bee-float {
-            animation: float 4s ease-in-out infinite;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-warm);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .bee-pulse {
-            animation: pulseGlow 2.5s infinite alternate;
-        }
+    /* SVG Pattern Background */
+    .bg-pattern {
+      background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(4deg); }
-        }
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
-            100% { box-shadow: 0 0 20px 8px rgba(245, 158, 11, 0); }
-        }
+    /* Navbar */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      background: rgba(253, 246, 226, 0.85);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .card-shadow {
-            box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-        }
-    </style>
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      line-height: 1.1;
+    }
+
+    .brand-domain {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .nav-btn {
+      background: var(--brand-yellow);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-btn:hover {
+      background: var(--brand-yellow-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #b45309;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 3.25rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--brand-yellow);
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: var(--brand-yellow);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-yellow-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--brand-black);
+      border: 1px solid var(--border-color);
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+
+    /* App Preview Hero Graphic */
+    .hero-preview {
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .app-card-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 12px;
+    }
+
+    .hero-app-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      margin: 0;
+    }
+
+    .hero-app-subtitle {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #d97706;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .notification-pill {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 10px 16px;
+      border-radius: 50px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+
+    }
+
+    /* Features Grid */
+    .features-section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: rgba(245, 158, 11, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-yellow-hover);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brand-black);
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Side-by-Side Store Downloads Section */
+    .downloads-section {
+      padding: 40px 0 80px;
+    }
+
+    .downloads-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .download-card {
+      flex: 1;
+      min-width: 320px;
+      max-width: 480px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .download-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      margin-bottom: 8px;
+    }
+
+    .download-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .qr-container {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+
+    .qr-container img {
+      display: block;
+      width: 160px;
+      height: 160px;
+    }
+
+    .store-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      gap: 10px;
+    }
+
+    .apple-btn {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .apple-btn:hover {
+      background-color: #262626;
+      transform: translateY(-2px);
+    }
+
+    .android-btn {
+      background-color: #0F9D58;
+      color: #ffffff;
+    }
+
+    .android-btn:hover {
+      background-color: #0b8047;
+      transform: translateY(-2px);
+    }
+
+    /* Summary Callout */
+    .summary-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 48px 32px;
+      text-align: center;
+      margin-bottom: 80px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .summary-banner p {
+      font-size: 1.25rem;
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .downloads-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .download-card {
+        width: 100%;
+      }
+      .notification-pill {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body class="antialiased text-brand-dark min-h-screen flex flex-col justify-between">
+<body class="bg-pattern">
 
-    <header class="sticky top-0 z-50 bg-[#FAF5EA]/90 backdrop-blur-md border-b border-amber-200/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shadow-inner relative overflow-hidden">
-                    <i data-lucide="calendar" class="w-6 h-6 text-amber-600"></i>
-                    <i data-lucide="sparkles" class="w-3 h-3 text-amber-500 absolute top-1 right-1"></i>
-                </div>
-                <div>
-                    <span class="font-display text-2xl font-bold tracking-tight text-brand-dark flex items-center gap-1.5">
-                        Busy Bees <span class="text-amber-500 text-sm bg-amber-100 px-2.5 py-0.5 rounded-full font-sans font-semibold">Family</span>
-                    </span>
-                    <p class="text-xs text-brand-slate font-medium hidden sm:block">derezzdigital.com</p>
-                </div>
-            </div>
-
-            <nav class="flex items-center space-x-3 sm:space-x-6">
-                <a href="#features" class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition">Features</a>
-                <a href="#how-it-works" class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition hidden md:block">Why Families Love Us</a>
-                <a href="#download" class="bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition transform active:scale-95 shadow-md flex items-center gap-2">
-                    <i data-lucide="download" class="w-4 h-4"></i> Get App
-                </a>
-            </nav>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Icon" class="brand-icon" />
+        <div class="brand-text">
+          <span class="brand-title">Busy Bees</span>
+          <span class="brand-domain">derezzdigital.com</span>
         </div>
-    </header>
+      </a>
+      <a href="#download" class="nav-btn">
+        <span class="material-symbols-outlined">download</span> Get App
+      </a>
+    </div>
+  </header>
 
-    <main class="flex-grow">
-        <section class="relative overflow-hidden hero-banner-bg py-12 lg:py-20 border-b border-amber-200/60">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Content Left -->
-                    <div class="lg:col-span-7 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/70 text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-sm">
-                            <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-ping"></span>
-                            <span>Built for Busy Parents, Families & Local Mom Groups</span>
-                        </div>
-                        
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight mb-6">
-                            Keeping Your <span class="text-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">Household</span> Organized
-                        </h1>
-                        
-                        <p class="text-lg sm:text-xl text-brand-slate mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                            Keep your home running smoothly with one simple app designed to help even the busiest bees stay organized and on track.
-                        </p>
+  <!-- HERO SECTION -->
+  <section class="hero container">
+    <div class="badge">
+      🐝 Built for busy parents. Plan schedules, track chores, & more!
+    </div>
+    
+    <h1 class="hero-title">Keeping Your <span>Household</span> Organized</h1>
+    
+    <p class="hero-subtitle">
+      Keep your home running smoothly with one simple app designed to help even the busiest bees stay organized and on track.
+    </p>
 
-                        <!-- Quick Action CTA -->
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="#download" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 border border-amber-400">
-                                <i data-lucide="qr-code" class="w-5 h-5"></i>
-                                Get the Free App
-                            </a>
-                            <a href="#features" class="w-full sm:w-auto bg-white/80 hover:bg-white text-brand-dark font-semibold text-lg px-6 py-4 rounded-2xl border border-amber-200 transition text-center">
-                                See Features
-                            </a>
-                        </div>
+    <div class="hero-actions">
+      <a href="#download" class="btn-primary">
+        <span class="material-symbols-outlined">qr_code_2</span> Get the Free App
+      </a>
+      <a href="#features" class="btn-secondary">See Features</a>
+    </div>
 
-                        <!-- Trust Badges -->
-                        <div class="mt-8 pt-6 border-t border-amber-200/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-brand-slate font-medium">
-                            <span class="flex items-center gap-1.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> No Ads
-                            </span>
-                            <span class="flex items-center gap-1.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Instant Household Sync
-                            </span>
-                            <span class="flex items-center gap-1.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Kid-Friendly Gamification
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Hero Visual Banner Card (Play Store / iOS Preview Styled) -->
-                    <div class="lg:col-span-5 relative">
-                        <div class="bee-float absolute -top-8 -right-4 z-20 hidden sm:block">
-                            <div class="bg-white p-3 rounded-2xl shadow-lg border border-amber-200 flex items-center gap-2">
-                                <span class="text-2xl">🐝</span>
-                                <div class="text-xs">
-                                    <p class="font-bold text-brand-dark">Dentist Appointment</p>
-                                    <p class="text-amber-600">Tomorrow at 2:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Main Graphic Canvas Card -->
-                        <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-3xl p-6 border-4 border-white shadow-2xl relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-200/40 rounded-full blur-2xl"></div>
-                            
-                            <!-- Header Mock Graphic matching uploaded style -->
-                            <div class="text-center pb-4 border-b border-amber-200/60">
-                                <div class="w-20 h-20 mx-auto mb-3 bg-amber-100 rounded-3xl p-2 shadow-inner border border-amber-200 flex items-center justify-center">
-                                    <i data-lucide="calendar-heart" class="w-12 h-12 text-amber-500"></i>
-                                </div>
-                                <h3 class="font-display text-3xl font-bold text-brand-dark">Busy Bees</h3>
-                                <p class="text-xs text-brand-slate font-medium uppercase tracking-wider mt-1">Organized Living For Families</p>
-                            </div>
-
-                            <!-- Preview List Card Mockups -->
-                            <div class="mt-5 space-y-3">
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center text-pink-500 font-bold">📅</div>
-                                        <div>
-                                            <p class="text-xs font-bold text-brand-dark">Soccer Practice & Oil Change</p>
-                                            <p class="text-[10px] text-gray-500">Shared Family Calendar</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Synced</span>
-                                </div>
-
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold">📋</div>
-                                        <div>
-                                            <p class="text-xs font-bold text-brand-dark">Grocery List & Mom Routine</p>
-                                            <p class="text-[10px] text-gray-500">4 of 6 Completed</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">66%</span>
-                                </div>
-
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">⭐</div>
-                                        <div>
-                                            <p class="text-xs font-bold text-brand-dark">Kids Earn Rewards</p>
-                                            <p class="text-[10px] text-gray-500">5 Star Rating Unlocked</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex text-amber-400 text-xs">★★★★★</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-16 lg:py-24 honeycomb-pattern">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-amber-600 font-extrabold text-sm uppercase tracking-wider">Key Features</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-1 mb-4">
-                        Everything You Need Right At Your Fingertips
-                    </h2>
-                    <p class="text-brand-slate text-base sm:text-lg">
-                        Designed to take the chaos out of managing a household with clear schedules, assigned responsibilities, star rewards, and custom lists.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    
-                    <!-- Feature 1: Organize Schedules -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
-                            <i data-lucide="calendar-days" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Organize Schedules</h3>
-                        <p class="text-brand-slate text-sm leading-relaxed">
-                            Keep everyone’s schedules in one convenient place. Create events, set reminders, and easily see what’s coming up so nothing gets forgotten.
-                        </p>
-                    </div>
-
-                    <!-- Feature 2: Assign Tasks -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 text-pink-500 shadow-inner">
-                            <i data-lucide="check-square" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Assign Tasks</h3>
-                        <p class="text-brand-slate text-sm leading-relaxed">
-                            Create tasks and assign them to specific members. Track what needs to be done, what’s been completed, and who’s responsible for each task.
-                        </p>
-                    </div>
-
-                    <!-- Feature 3: Earn & Redeem Rewards -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
-                            <i data-lucide="award" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Earn & Redeem Rewards</h3>
-                        <p class="text-brand-slate text-sm leading-relaxed">
-                            Turn completed tasks into stars. Members can save their earnings and redeem them in a customizable reward store.
-                        </p>
-                    </div>
-
-                    <!-- Feature 4: Create Custom Lists -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 shadow-inner">
-                            <i data-lucide="list-checks" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Create Custom Lists</h3>
-                        <p class="text-brand-slate text-sm leading-relaxed">
-                            Make lists for anything you need—from groceries and errands to packing lists, to-dos, and shopping. Check items off as you go and keep your lists organized in one place.
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- Closing Banner Summary Callout -->
-                <div class="mt-14 max-w-4xl mx-auto bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 p-8 rounded-3xl border-2 border-amber-300 text-center shadow-md">
-                    <p class="text-lg sm:text-xl font-bold text-brand-dark mb-4 leading-relaxed">
-                        "From schedules and tasks to rewards and lists, everything you need to keep your household organized is right at your fingertips."
-                    </p>
-                    <a href="#download" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-base px-6 py-3 rounded-xl transition shadow">
-                        <i data-lucide="sparkles" class="w-5 h-5"></i> Download Busy Bee Today
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="download" class="py-16 bg-white border-t border-amber-200">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-amber-600 font-extrabold text-sm uppercase tracking-wider">Ready for Launch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 mb-4">
-                        Download Busy Bees Today
-                    </h2>
-                    <p class="text-brand-slate text-base sm:text-lg">
-                        Scan with your phone camera or click below to install directly on your device.
-                    </p>
-                </div>
-
-                <!-- Configurator Accordion for App Store IDs (Helps user update preview IDs dynamically) -->
-                <div class="max-w-2xl mx-auto mb-10 p-4 bg-amber-50 rounded-2xl border border-amber-200">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-bold text-sm text-amber-900 cursor-pointer list-none">
-                            <span class="flex items-center gap-2">
-                                <i data-lucide="settings" class="w-4 h-4 text-amber-600"></i> 
-                                Settings: Customize App Store Link & ID Parameters
-                            </span>
-                            <span class="transition group-open:rotate-180">
-                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </span>
-                        </summary>
-                        <div class="mt-4 pt-4 border-t border-amber-200 grid sm:grid-cols-2 gap-4 text-xs">
-                            <div>
-                                <label class="block font-semibold mb-1 text-gray-700">iOS App Store ID / Slug:</label>
-                                <input type="text" id="ios-app-id" value="busy-bees-calendar/id1234567890" class="w-full p-2 border border-amber-300 rounded-lg text-gray-800 bg-white" oninput="updateStoreLinks()">
-                            </div>
-                            <div>
-                                <label class="block font-semibold mb-1 text-gray-700">Android Package Name:</label>
-                                <input type="text" id="android-app-id" value="com.derezzdigital.busybees" class="w-full p-2 border border-amber-300 rounded-lg text-gray-800 bg-white" oninput="updateStoreLinks()">
-                            </div>
-                        </div>
-                    </details>
-                </div>
-
-                <!-- Side-by-Side Store Download Section requested by user -->
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    
-                    <!-- iOS Card -->
-                    <div class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-amber-400 transition">
-                        <div class="absolute top-0 right-0 bg-amber-200 text-amber-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                            iOS / iPadOS
-                        </div>
-
-                        <div>
-                            <div class="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                                <i data-lucide="apple" class="w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Busy Bees for iOS</h3>
-                            <p class="text-xs sm:text-sm text-brand-slate mb-6">
-                                Scan or tap below to get Busy Bees on your iPhone or iPad.
-                            </p>
-                        </div>
-
-                        <!-- QR Code Container -->
-                        <div class="bg-white p-4 rounded-2xl border border-amber-200 shadow-inner mb-6 relative">
-                            <img id="ios-qr-img" src="https://quickchart.io/qr?text=https://apps.apple.com/app/id1234567890&size=160" alt="iOS QR Code" class="w-40 h-40 object-contain mx-auto">
-                            <p class="text-[10px] text-gray-400 mt-2 font-mono">Scan with iOS Camera</p>
-                        </div>
-
-                        <!-- iOS Download Button -->
-                        <a id="ios-btn" href="https://apps.apple.com/app/id1234567890" target="_blank" rel="noopener font-bold" class="w-full bg-black hover:bg-gray-800 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
-                            <i data-lucide="download" class="w-5 h-5"></i>
-                            <span>Download on App Store</span>
-                        </a>
-                    </div>
-
-                    <!-- Android Card -->
-                    <div class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-emerald-400 transition">
-                        <div class="absolute top-0 right-0 bg-emerald-200 text-emerald-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                            Android OS
-                        </div>
-
-                        <div>
-                            <div class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                                <i data-lucide="play" class="w-7 h-7 fill-current ml-1"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Busy Bees for Android</h3>
-                            <p class="text-xs sm:text-sm text-brand-slate mb-6">
-                                Scan or tap below to get Busy Bees on your Android phone or tablet.
-                            </p>
-                        </div>
-
-                        <!-- QR Code Container -->
-                        <div class="bg-white p-4 rounded-2xl border border-amber-200 shadow-inner mb-6 relative">
-                            <img id="android-qr-img" src="https://quickchart.io/qr?text=https://play.google.com/store/apps/details?id=com.derezzdigital.busybees&size=160" alt="Android QR Code" class="w-40 h-40 object-contain mx-auto">
-                            <p class="text-[10px] text-gray-400 mt-2 font-mono">Scan with Android Camera</p>
-                        </div>
-
-                        <!-- Android Download Button -->
-                        <a id="android-btn" href="https://play.google.com/store/apps/details?id=com.derezzdigital.busybees" target="_blank" rel="noopener font-bold" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
-                            <i data-lucide="download" class="w-5 h-5"></i>
-                            <span>Get it on Google Play</span>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="py-16 bg-[#FAF5EA] border-t border-amber-200/60">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span class="text-amber-600 text-xs font-bold uppercase tracking-widest">Parent Recommended</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mt-2 mb-8">Loved by Busy Parents & Local Groups</h2>
-
-                <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div class="bg-white p-6 rounded-2xl border border-amber-200/80 shadow-sm">
-                        <div class="flex items-center gap-1 text-amber-400 mb-3">★★★★★</div>
-                        <p class="text-xs sm:text-sm text-brand-slate italic mb-4">
-                            "Finally an app that isn't bloated with corporate tools. Busy Bees made sharing kid sports schedules and daily chore routines so simple that even my 8-year-old checks off his daily stars."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-pink-200 flex items-center justify-center text-pink-700 font-bold text-xs">SAR</div>
-                            <div>
-                                <p class="text-xs font-bold text-brand-dark">Sarah R.</p>
-                                <p class="text-[10px] text-gray-500">Local Mom Group Coordinator</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-amber-200/80 shadow-sm">
-                        <div class="flex items-center gap-1 text-amber-400 mb-3">★★★★★</div>
-                        <p class="text-xs sm:text-sm text-brand-slate italic mb-4">
-                            "I shared the derezzdigital website in our school parent chat. The QR codes made it instant for everyone to grab whether they were on iPhone or Android!"
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-amber-200 flex items-center justify-center text-amber-800 font-bold text-xs">MKN</div>
-                            <div>
-                                <p class="text-xs font-bold text-brand-dark">Mark K.</p>
-                                <p class="text-[10px] text-gray-500">Parent of Two</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-brand-dark text-amber-100/80 py-10 border-t border-stone-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">🐝</div>
-                <div>
-                    <p class="font-bold text-white text-sm">Busy Bees</p>
-                    <p class="text-stone-400">© <span id="year">2026</span> DeRezz Digital (derezzdigital.com). All rights reserved.</p>
-                </div>
-            </div>
-
-            <div class="flex items-center space-x-6 text-stone-300">
-                <a href="#features" class="hover:text-amber-400 transition">Features</a>
-                <a href="#download" class="hover:text-amber-400 transition">Store Links</a>
-                <a href="mailto:support@derezzdigital.com" class="hover:text-amber-400 transition">Support</a>
-            </div>
+    <!-- HERO GRAPHIC PREVIEW -->
+    <div class="hero-preview">
+      <div class="notification-pill">
+        <span>🐝</span>
+        <div>
+          <div style="font-size: 0.75rem; color: #d97706;">Dentist Appointment</div>
+          <div>Tomorrow at 2:00 PM</div>
         </div>
-    </footer>
+      </div>
+      
+      <div class="app-card-header">
+        <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Logo" class="hero-app-icon" />
+        <h2 class="hero-app-title">Busy Bees</h2>
+        <span class="hero-app-subtitle">Organized Living For Families</span>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+  <!-- FEATURES SECTION -->
+  <section id="features" class="features-section container">
+    <h2 class="section-title">Key Features</h2>
+    <p class="section-subtitle">Everything you need to keep your family synchronized</p>
 
-        // Update year dynamically
-        document.getElementById('year').innerText = new Date().getFullYear();
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <span class="material-symbols-outlined">calendar_month</span>
+        </div>
+        <h3>Organize Schedules</h3>
+        <p>Keep everyone’s schedules in one convenient place. Create events, set reminders, and easily see what’s coming up so nothing gets forgotten.</p>
+      </div>
 
-        // Dynamic store link and QR Code updater
-        function updateStoreLinks() {
-            const iosVal = document.getElementById('ios-app-id').value.trim();
-            const androidVal = document.getElementById('android-app-id').value.trim();
+      <!-- Feature 2 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <span class="material-symbols-outlined">task_alt</span>
+        </div>
+        <h3>Assign Tasks</h3>
+        <p>Create tasks and assign them to specific members. Track what needs to be done, what’s been completed, and who’s responsible for each task.</p>
+      </div>
 
-            const iosUrl = iosVal.startsWith('http') ? iosVal : `https://apps.apple.com/app/${iosVal}`;
-            const androidUrl = androidVal.startsWith('http') ? androidVal : `https://play.google.com/store/apps/details?id=${androidVal}`;
+      <!-- Feature 3 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <span class="material-symbols-outlined">stars</span>
+        </div>
+        <h3>Earn & Redeem Rewards</h3>
+        <p>Turn completed tasks into stars. Members can save their earnings and redeem them in a customizable reward store.</p>
+      </div>
 
-            // Update URLs
-            document.getElementById('ios-btn').href = iosUrl;
-            document.getElementById('android-btn').href = androidUrl;
+      <!-- Feature 4 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <span class="material-symbols-outlined">checklist</span>
+        </div>
+        <h3>Create Custom Lists</h3>
+        <p>Make lists for anything you need—from groceries and errands to packing lists, to-dos, and shopping. Check items off as you go and keep your lists organized in one place.</p>
+      </div>
+    </div>
+  </section>
 
-            // Update QR code images dynamically via QuickChart API
-            document.getElementById('ios-qr-img').src = `https://quickchart.io/qr?text=${encodeURIComponent(iosUrl)}&size=160`;
-            document.getElementById('android-qr-img').src = `https://quickchart.io/qr?text=${encodeURIComponent(androidUrl)}&size=160`;
-        }
-    </script>
+  <!-- DOWNLOADS SECTION -->
+  <section id="download" class="downloads-section container">
+    <h2 class="section-title" style="margin-bottom: 40px;">Download Busy Bees</h2>
+    
+    <div class="downloads-grid">
+      <!-- iOS / Apple Section -->
+      <div class="download-card">
+        <div>
+          <h3>Busy Bees for iOS</h3>
+          <p>Scan or click below to get Busy Bees on your iPad or iPhone.</p>
+        </div>
+        <div class="qr-container">
+          <img src="https://quickchart.io/qr?text=https://apps.apple.com/app/id6821445530&size=160" alt="iOS App Store QR Code" />
+        </div>
+        <a href="https://apps.apple.com/app/id6821445530" target="_blank" rel="noopener noreferrer" class="store-button apple-btn">
+          Download on App Store
+        </a>
+      </div>
+
+      <!-- Android Section -->
+      <div class="download-card">
+        <div>
+          <h3>Busy Bees for Android</h3>
+          <p>Scan or click below to get Busy Bees on your Android tablet or phone.</p>
+        </div>
+        <div class="qr-container">
+          <img src="https://quickchart.io/qr?text=https://play.google.com/store/apps/details?id=com.derezzdigital.busybees&size=160" alt="Google Play Store QR Code" />
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.derezzdigital.busybees" target="_blank" rel="noopener noreferrer" class="store-button android-btn">
+          Get it on Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY BANNER -->
+  <section class="container">
+    <div class="summary-banner">
+      <p>From schedules and tasks to rewards and lists, everything you need to keep your household organized is right at your fingertips. Download Busy Bees today!</p>
+      <a href="#download" class="btn-primary" style="background: var(--brand-yellow);">
+        Get Started Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Derezz Digital LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
