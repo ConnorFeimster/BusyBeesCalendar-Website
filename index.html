@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-	<meta name="google-site-verification" content="RZ1_PFG1whjnaEzr4DCN541BhTjq-xk9K0EvVW676PU" />
+    <meta name="google-site-verification" content="RZ1_PFG1whjnaEzr4DCN541BhTjq-xk9K0EvVW676PU" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busy Bees Calendar - Keeping Your Household Organized</title>
 
@@ -13,9 +14,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -50,7 +53,10 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .font-display {
+        h1,
+        h2,
+        h3,
+        .font-display {
             font-family: 'Fredoka', sans-serif;
         }
 
@@ -72,8 +78,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(4deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(4deg);
+            }
         }
 
         .card-shadow {
@@ -81,24 +94,32 @@
         }
     </style>
 </head>
+
 <body class="antialiased text-brand-dark min-h-screen flex flex-col justify-between">
 
     <header class="sticky top-0 z-50 bg-[#FAF5EA]/90 backdrop-blur-md border-b border-amber-200/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <!-- NAV APP ICON -->
-                <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Icon" class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-amber-300" />
+                <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Icon"
+                    class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-amber-300" />
                 <div>
-                    <a href="/" class="font-display text-2xl font-bold tracking-tight text-brand-dark flex items-center gap-1.5">
-                        Busy Bees <span class="text-amber-500 text-sm bg-amber-100 px-2.5 py-0.5 rounded-full font-sans font-semibold">Calendar</span>
+                    <a href="/"
+                        class="font-display text-2xl font-bold tracking-tight text-brand-dark flex items-center gap-1.5">
+                        Busy Bees <span
+                            class="text-amber-500 text-sm bg-amber-100 px-2.5 py-0.5 rounded-full font-sans font-semibold">Calendar</span>
                     </a>
                     <p class="text-xs text-brand-slate font-medium hidden sm:block">derezzdigital.com</p>
                 </div>
             </div>
 
             <nav class="flex items-center space-x-3 sm:space-x-6">
-                <a href="#features" class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition">Features</a>
-                <a href="#download" class="bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition transform active:scale-95 shadow-md flex items-center gap-2">
+                <a href="#features"
+                    class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition">Features</a>
+                <a href="./pricing.html"
+                    class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition">Pricing</a>
+                <a href="#download"
+                    class="bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition transform active:scale-95 shadow-md flex items-center gap-2">
                     <i data-lucide="download" class="w-4 h-4"></i> Get App
                 </a>
             </nav>
@@ -109,43 +130,59 @@
         <section class="relative overflow-hidden hero-banner-bg py-12 lg:py-20 border-b border-amber-200/60">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    
+
                     <!-- Hero Content Left -->
                     <div class="lg:col-span-7 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/70 text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-sm">
+                        <div
+                            class="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/70 text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-sm">
                             <span>🐝</span>
                             <span>Built for busy households. Plan schedules, track chores, & more!</span>
                         </div>
-                        
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight mb-6">
-                            Keeping Your <span class="text-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">Household</span> Organized
+
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight mb-6">
+                            Keeping Your <span
+                                class="text-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">Household</span>
+                            Organized
                         </h1>
-                        
-                        <p class="text-lg sm:text-xl text-brand-slate mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                            Keep your home running smoothly with one simple app designed to help even the busiest bees stay organized and on track.
+
+                        <p
+                            class="text-lg sm:text-xl text-brand-slate mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Keep your home running smoothly with one simple app designed to help even the busiest bees
+                            stay organized and on track.
                         </p>
 
-                        <!-- Quick Action CTA -->
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="#download" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 border border-amber-400">
+                        <!-- Quick Action CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                            <a href="#download"
+                                class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-base sm:text-lg px-6 py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 border border-amber-400">
                                 <i data-lucide="qr-code" class="w-5 h-5"></i>
                                 Get the Free App
                             </a>
-                            <a href="#features" class="w-full sm:w-auto bg-white/80 hover:bg-white text-brand-dark font-semibold text-lg px-6 py-4 rounded-2xl border border-amber-200 transition text-center">
+                            <a href="#features"
+                                class="w-full sm:w-auto bg-white/80 hover:bg-white text-brand-dark font-semibold text-base sm:text-lg px-6 py-3.5 rounded-2xl border border-amber-200 transition text-center shadow-sm">
                                 See Features
+                            </a>
+                            <a href="./pricing.html"
+                                class="w-full sm:w-auto bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-base sm:text-lg px-6 py-3.5 rounded-2xl border border-amber-300/80 transition text-center shadow-sm flex items-center justify-center gap-2">
+                                <i data-lucide="tag" class="w-4 h-4 text-amber-600"></i>
+                                Pricing
                             </a>
                         </div>
 
                         <!-- Trust Badges -->
-                        <div class="mt-8 pt-6 border-t border-amber-200/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-brand-slate font-medium">
+                        <div
+                            class="mt-8 pt-6 border-t border-amber-200/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-brand-slate font-medium">
                             <span class="flex items-center gap-1.5">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> No Ads
                             </span>
                             <span class="flex items-center gap-1.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Instant Household Sync
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Instant Household
+                                Sync
                             </span>
                             <span class="flex items-center gap-1.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Reward System Included
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Reward System
+                                Included
                             </span>
                         </div>
                     </div>
@@ -153,7 +190,8 @@
                     <!-- Hero Visual Graphic Banner -->
                     <div class="lg:col-span-5 relative">
                         <div class="bee-float absolute -top-8 -right-4 z-20 hidden sm:block">
-                            <div class="bg-white p-3 rounded-2xl shadow-lg border border-amber-200 flex items-center gap-2">
+                            <div
+                                class="bg-white p-3 rounded-2xl shadow-lg border border-amber-200 flex items-center gap-2">
                                 <span class="text-2xl">🐝</span>
                                 <div class="text-xs">
                                     <p class="font-bold text-brand-dark">Dentist Appointment</p>
@@ -163,43 +201,58 @@
                         </div>
 
                         <!-- Main Graphic Canvas Card -->
-                        <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-3xl p-6 border-4 border-white shadow-2xl relative overflow-hidden">
+                        <div
+                            class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-3xl p-6 border-4 border-white shadow-2xl relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-amber-200/40 rounded-full blur-2xl"></div>
-                            
+
                             <!-- Header Graphic Mock -->
                             <div class="text-center pb-4 border-b border-amber-200/60">
-                                <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Logo" class="w-20 h-20 mx-auto mb-3 rounded-3xl object-cover shadow-md border-2 border-white" />
+                                <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Logo"
+                                    class="w-20 h-20 mx-auto mb-3 rounded-3xl object-cover shadow-md border-2 border-white" />
                                 <h3 class="font-display text-3xl font-bold text-brand-dark">Busy Bees Calendar</h3>
-                                <p class="text-xs text-brand-slate font-medium uppercase tracking-wider mt-1">Organized Living For Families</p>
+                                <p class="text-xs text-brand-slate font-medium uppercase tracking-wider mt-1">Organized
+                                    Living For Families</p>
                             </div>
 
                             <!-- Preview List Card Mockups -->
                             <div class="mt-5 space-y-3">
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
+                                <div
+                                    class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center text-pink-500 font-bold">📅</div>
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center text-pink-500 font-bold">
+                                            📅</div>
                                         <div>
-                                            <p class="text-xs font-bold text-brand-dark">Soccer Practice & Oil Change</p>
+                                            <p class="text-xs font-bold text-brand-dark">Soccer Practice & Oil Change
+                                            </p>
                                             <p class="text-[10px] text-gray-500">Shared Family Calendar</p>
                                         </div>
                                     </div>
-                                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Synced</span>
+                                    <span
+                                        class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Synced</span>
                                 </div>
 
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
+                                <div
+                                    class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold">📋</div>
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 font-bold">
+                                            📋</div>
                                         <div>
                                             <p class="text-xs font-bold text-brand-dark">Grocery List & Errands</p>
                                             <p class="text-[10px] text-gray-500">4 of 6 Completed</p>
                                         </div>
                                     </div>
-                                    <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">66%</span>
+                                    <span
+                                        class="text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">66%</span>
                                 </div>
 
-                                <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
+                                <div
+                                    class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">⭐</div>
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
+                                            ⭐</div>
                                         <div>
                                             <p class="text-xs font-bold text-brand-dark">Earn Stars for Chores</p>
                                             <p class="text-[10px] text-gray-500">Redeem In Reward Store</p>
@@ -217,82 +270,106 @@
 
         <section id="features" class="py-16 lg:py-24 honeycomb-pattern">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-amber-600 font-extrabold text-sm uppercase tracking-wider">Key Features</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-1 mb-4">
                         Everything You Need Right At Your Fingertips
                     </h2>
                     <p class="text-brand-slate text-base sm:text-lg">
-                        Designed to take the chaos out of managing a household with clear schedules, assigned responsibilities, star rewards, and custom lists.
+                        Designed to take the chaos out of managing a household with clear schedules, assigned
+                        responsibilities, star rewards, and custom lists.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    
+
                     <!-- Feature 1: Organize Schedules -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
                             <i data-lucide="calendar-days" class="w-7 h-7"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Organize Schedules</h3>
                         <p class="text-brand-slate text-sm leading-relaxed">
-                            Keep everyone’s schedules in one convenient place. Create events and easily see what’s coming up so nothing gets forgotten.
+                            Keep everyone’s schedules in one convenient place. Create events and easily see what’s
+                            coming up so nothing gets forgotten.
                         </p>
                     </div>
 
                     <!-- Feature 2: Assign Tasks -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 text-pink-500 shadow-inner">
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 text-pink-500 shadow-inner">
                             <i data-lucide="check-square" class="w-7 h-7"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Assign Tasks</h3>
                         <p class="text-brand-slate text-sm leading-relaxed">
-                            Create tasks and assign them to specific members. Track what needs to be done, what’s been completed, and who’s responsible for each task.
+                            Create tasks and assign them to specific members. Track what needs to be done, what’s been
+                            completed, and who’s responsible for each task.
                         </p>
                     </div>
 
                     <!-- Feature 3: Earn & Redeem Rewards -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 text-amber-600 shadow-inner">
                             <i data-lucide="award" class="w-7 h-7"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Earn & Redeem Rewards</h3>
                         <p class="text-brand-slate text-sm leading-relaxed">
-                            Turn completed tasks into stars. Members can save their earnings and redeem them in a customizable reward store.
+                            Turn completed tasks into stars. Members can save their earnings and redeem them in a
+                            customizable reward store.
                         </p>
                     </div>
 
                     <!-- Feature 4: Create Custom Lists -->
-                    <div class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
-                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 shadow-inner">
+                    <div
+                        class="bg-white p-8 rounded-3xl border border-amber-200 card-shadow hover:-translate-y-1 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 shadow-inner">
                             <i data-lucide="list-checks" class="w-7 h-7"></i>
                         </div>
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Create Custom Lists</h3>
                         <p class="text-brand-slate text-sm leading-relaxed">
-                            Make lists for anything you need—from groceries and errands to packing lists, to-dos, and shopping. Check items off as you go and keep your lists organized in one place.
+                            Make lists for anything you need—from groceries and errands to packing lists, to-dos, and
+                            shopping. Check items off as you go and keep your lists organized in one place.
                         </p>
                     </div>
 
                 </div>
 
                 <!-- About Us / Creator Story Banner -->
-                <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-br from-amber-50/90 via-orange-50/50 to-amber-100/60 p-8 sm:p-10 rounded-3xl border-2 border-amber-200/80 shadow-md">
+                <div
+                    class="mt-16 max-w-4xl mx-auto bg-gradient-to-br from-amber-50/90 via-orange-50/50 to-amber-100/60 p-8 sm:p-10 rounded-3xl border-2 border-amber-200/80 shadow-md">
                     <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-dark text-center mb-6 font-display">
                         Why We Built Busy Bees Calendar
                     </h3>
-                    
-                    <div class="prose prose-amber max-w-none text-brand-slate text-base sm:text-lg leading-relaxed space-y-4 text-left sm:text-justify">
+
+                    <div
+                        class="prose prose-amber max-w-none text-brand-slate text-base sm:text-lg leading-relaxed space-y-4 text-left sm:text-justify">
                         <p>
-                            As a busy household, we understand how challenging it can be to keep everyone’s schedules organized while balancing work, school, activities, appointments, and everyday life. We wanted a simple, practical, and affordable way to bring our family’s schedules together in one central place—without the added expense of purchasing another device or investing in an expensive organizational system.
+                            As a busy household, we understand how challenging it can be to keep everyone’s schedules
+                            organized while balancing work, school, activities, appointments, and everyday life. We
+                            wanted a simple, practical, and affordable way to bring our family’s schedules together in
+                            one central place—without the added expense of purchasing another device or investing in an
+                            expensive organizational system.
                         </p>
                         <p>
-                            With Busy Bees Calendar, families can spend less time juggling schedules and trying to keep track of everyone’s plans and more time focusing on what matters most: making memories, spending time together, and enjoying the little moments of everyday life. Busy Bees Calendar was created by a busy household, for busy households—with the hope of making life a little less hectic, one day at a time.
+                            With Busy Bees Calendar, families can spend less time juggling schedules and trying to keep
+                            track of everyone’s plans and more time focusing on what matters most: making memories,
+                            spending time together, and enjoying the little moments of everyday life. Busy Bees Calendar
+                            was created by a busy household, for busy households—with the hope of making life a little
+                            less hectic, one day at a time.
                         </p>
                     </div>
 
                     <div class="mt-8 text-center">
-                        <a href="#download" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-base px-8 py-3.5 rounded-2xl transition transform hover:-translate-y-0.5 shadow-md">
+                        <a href="#download"
+                            class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-base px-8 py-3.5 rounded-2xl transition transform hover:-translate-y-0.5 shadow-md">
                             <i data-lucide="sparkles" class="w-5 h-5"></i> Download Busy Bees Calendar Today
                         </a>
                     </div>
@@ -303,7 +380,7 @@
 
         <section id="download" class="py-16 bg-white border-t border-amber-200">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="text-amber-600 font-extrabold text-sm uppercase tracking-wider">Get Started Now</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 mb-4">
@@ -316,15 +393,18 @@
 
                 <!-- Side-by-Side Store Download Section -->
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    
+
                     <!-- iOS Card -->
-                    <div class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-amber-400 transition">
-                        <div class="absolute top-0 right-0 bg-amber-200 text-amber-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                    <div
+                        class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-amber-400 transition">
+                        <div
+                            class="absolute top-0 right-0 bg-amber-200 text-amber-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                             iOS / iPadOS
                         </div>
 
                         <div>
-                            <div class="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                                 <i data-lucide="apple" class="w-8 h-8"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Busy Bees Calendar for iOS</h3>
@@ -334,23 +414,28 @@
                         </div>
 
                         <div class="bg-white p-4 rounded-2xl border border-amber-200 shadow-inner mb-6">
-                            <img src="https://quickchart.io/qr?text=https://apps.apple.com/app/id6821445530&size=160" alt="iOS App Store QR Code" class="w-40 h-40 object-contain mx-auto">
+                            <img src="https://quickchart.io/qr?text=https://apps.apple.com/app/id6821445530&size=160"
+                                alt="iOS App Store QR Code" class="w-40 h-40 object-contain mx-auto">
                         </div>
 
-                        <a href="https://apps.apple.com/app/id6821445530" target="_blank" rel="noopener noreferrer" class="w-full bg-black hover:bg-gray-800 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
+                        <a href="https://apps.apple.com/app/id6821445530" target="_blank" rel="noopener noreferrer"
+                            class="w-full bg-black hover:bg-gray-800 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Download on App Store</span>
                         </a>
                     </div>
 
                     <!-- Android Card -->
-                    <div class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-emerald-400 transition">
-                        <div class="absolute top-0 right-0 bg-emerald-200 text-emerald-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                    <div
+                        class="bg-[#FAF5EA] rounded-3xl p-8 border-2 border-amber-200/80 shadow-lg flex flex-col justify-between text-center items-center relative overflow-hidden group hover:border-emerald-400 transition">
+                        <div
+                            class="absolute top-0 right-0 bg-emerald-200 text-emerald-900 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                             Android OS
                         </div>
 
                         <div>
-                            <div class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                            <div
+                                class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                                 <i data-lucide="play" class="w-7 h-7 fill-current ml-1"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-brand-dark mb-2">Busy Bees Calendar for Android</h3>
@@ -360,10 +445,13 @@
                         </div>
 
                         <div class="bg-white p-4 rounded-2xl border border-amber-200 shadow-inner mb-6">
-                            <img src="https://quickchart.io/qr?text=https://play.google.com/store/apps/details?id=com.derezzdigital.busybees&size=160" alt="Google Play Store QR Code" class="w-40 h-40 object-contain mx-auto">
+                            <img src="https://quickchart.io/qr?text=https://play.google.com/store/apps/details?id=com.derezzdigital.busybees&size=160"
+                                alt="Google Play Store QR Code" class="w-40 h-40 object-contain mx-auto">
                         </div>
 
-                        <a href="https://play.google.com/store/apps/details?id=com.derezzdigital.busybees" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
+                        <a href="https://play.google.com/store/apps/details?id=com.derezzdigital.busybees"
+                            target="_blank" rel="noopener noreferrer"
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 px-6 rounded-2xl font-bold text-base transition flex items-center justify-center gap-3 shadow-md">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Get it on Google Play</span>
                         </a>
@@ -375,9 +463,12 @@
     </main>
 
     <footer class="bg-brand-dark text-amber-100/80 py-10 border-t border-stone-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
             <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">🐝</div>
+                <div
+                    class="w-8 h-8 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">
+                    🐝</div>
                 <div>
                     <p class="font-bold text-white text-sm">Busy Bees Calendar</p>
                     <p class="text-stone-400">© 2026 Derezz Digital LLC. All rights reserved.</p>
@@ -385,8 +476,9 @@
             </div>
 
             <div class="flex items-center space-x-6 text-stone-300">
-                <a href="#features" class="hover:text-amber-400 transition">Features</a>
-                <a href="#download" class="hover:text-amber-400 transition">Store Links</a>
+                <a href="./index.html#features" class="hover:text-amber-400 transition">Features</a>
+                <a href="./pricing.html" class="hover:text-amber-400 transition">Pricing</a>
+                <a href="./index.html#download" class="hover:text-amber-400 transition">Store Links</a>
                 <a href="./privacy.html" class="hover:text-amber-400 transition">Privacy Policy</a>
                 <a href="mailto:support@derezzdigital.com" class="hover:text-amber-400 transition">Support</a>
             </div>
@@ -398,4 +490,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

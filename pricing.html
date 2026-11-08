@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Busy Bees Calendar</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="./assets/BusyB_Logo_iOS.png">
+    <link rel="apple-touch-icon" href="./assets/BusyB_Logo_iOS.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAF5EA',
+                            card: '#FFFDF9',
+                            yellow: '#F59E0B',
+                            gold: '#EAB308',
+                            warmLight: '#FEF3C7',
+                            honeycomb: '#FDE68A',
+                            pinkAccent: '#F472B6',
+                            pinkSoft: '#FCE7F3',
+                            dark: '#292524',
+                            slate: '#57534E'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF5EA;
+            color: #292524;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .honeycomb-pattern {
+            background-color: #FAF5EA;
+            background-image: radial-gradient(#FDE68A 1.5px, transparent 1.5px), radial-gradient(#FDE68A 1.5px, #FAF5EA 1.5px);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            opacity: 0.85;
+        }
+
+        .hero-banner-bg {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FAF5EA 50%, #FCE7F3 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+</head>
+
+<body class="antialiased text-brand-dark min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 z-50 bg-[#FAF5EA]/90 backdrop-blur-md border-b border-amber-200/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="./assets/BusyB_Logo_iOS.png" alt="Busy Bees Icon"
+                    class="w-12 h-12 rounded-2xl object-cover shadow-sm border border-amber-300" />
+                <div>
+                    <a href="./index.html"
+                        class="font-display text-2xl font-bold tracking-tight text-brand-dark flex items-center gap-1.5">
+                        Busy Bees <span
+                            class="text-amber-500 text-sm bg-amber-100 px-2.5 py-0.5 rounded-full font-sans font-semibold">Calendar</span>
+                    </a>
+                    <p class="text-xs text-brand-slate font-medium hidden sm:block">derezzdigital.com</p>
+                </div>
+            </div>
+
+            <nav class="flex items-center space-x-3 sm:space-x-6">
+                <a href="./index.html#features"
+                    class="text-sm font-semibold text-brand-slate hover:text-amber-600 transition">Features</a>
+                <a href="./pricing.html" class="text-sm font-bold text-amber-600 transition">Pricing</a>
+                <a href="./index.html#download"
+                    class="bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition transform active:scale-95 shadow-md flex items-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i> Get App
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- Hero Header -->
+        <section class="hero-banner-bg py-12 sm:py-16 border-b border-amber-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div
+                    class="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/70 text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4 shadow-sm">
+                    <span>🐝</span>
+                    <span>Simple, Transparent & Fair</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    Simple, Honest Pricing
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-slate max-w-2xl mx-auto">
+                    Designed for busy households. Try free for 30 days, then enjoy locked-in pricing for life with zero
+                    hidden catches.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Pricing Cards Section -->
+        <section class="py-16 honeycomb-pattern">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid md:grid-cols-2 gap-8 items-stretch mb-16">
+
+                    <!-- Free Trial Card -->
+                    <div
+                        class="bg-white rounded-3xl p-8 border-2 border-amber-200 card-shadow flex flex-col justify-between relative overflow-hidden">
+                        <div>
+                            <div
+                                class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                                Risk-Free Start
+                            </div>
+                            <h2 class="text-2xl font-bold text-brand-dark mb-2">30-Day Free Trial</h2>
+                            <p class="text-sm text-brand-slate mb-6">
+                                Test out all features with your entire household before spending a dime.
+                            </p>
+
+                            <div class="mb-8">
+                                <span class="text-5xl font-extrabold text-brand-dark">$0</span>
+                                <span class="text-brand-slate font-medium"> / first 30 days</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-brand-dark mb-8">
+                                <li
+                                    class="flex items-center gap-3 font-semibold text-emerald-700 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600 flex-shrink-0"></i>
+                                    <span>NO credit card required to start</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>Full access to all features immediately</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>Sync across all family members' devices</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>Zero commitment or auto-renew traps</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="./index.html#download"
+                            class="w-full bg-white hover:bg-amber-50 text-brand-dark border-2 border-amber-300 font-bold py-4 rounded-2xl text-center transition shadow-sm">
+                            Try 30 Days Free
+                        </a>
+                    </div>
+
+                    <!-- Founder Plan Card -->
+                    <div
+                        class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-3xl p-8 border-4 border-amber-400 card-shadow flex flex-col justify-between relative overflow-hidden shadow-xl">
+                        <div
+                            class="absolute top-0 right-0 bg-amber-500 text-white text-xs font-extrabold px-4 py-1.5 rounded-bl-2xl uppercase tracking-wider">
+                            Founder Rate
+                        </div>
+
+                        <div>
+                            <div
+                                class="inline-block bg-amber-200 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                                Locked-In For Life
+                            </div>
+                            <h2 class="text-2xl font-bold text-brand-dark mb-2">Founder’s Annual</h2>
+                            <p class="text-sm text-brand-slate mb-6">
+                                Lock in our launch price forever. One low price covers your whole household.
+                            </p>
+
+                            <div class="mb-8">
+                                <span class="text-5xl font-extrabold text-brand-dark">$10</span>
+                                <span class="text-brand-slate font-medium"> / year</span>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm text-brand-dark mb-8">
+                                <li
+                                    class="flex items-center gap-3 font-bold text-amber-900 bg-amber-200/70 p-2.5 rounded-xl border border-amber-300">
+                                    <i data-lucide="lock" class="w-5 h-5 text-amber-700 flex-shrink-0"></i>
+                                    <span>Locked in for life—price will NEVER go up for you</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>Get EVERYTHING—no paywalls, no extra tiers</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="ban" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>100% Ad-Free experience for everyone</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="users" class="w-5 h-5 text-amber-500 flex-shrink-0"></i>
+                                    <span>Includes schedules, chores, lists & reward store</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="./index.html#download"
+                            class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-2xl text-center transition shadow-md flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Get the App
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Competitor Comparison / Manifesto Card -->
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-10 border-2 border-amber-200 card-shadow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600">
+                            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark font-display">Why We Charge $10, Not $90+</h3>
+                            <p class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Our Commitment to
+                                Families</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-brand-slate text-base leading-relaxed">
+                        <p>
+                            When you look around at other family organizing apps, you’ll notice many of them charge
+                            <strong>$90+ every single year</strong> or force you to buy expensive proprietary hardware
+                            display boards just to keep your home on track.
+                        </p>
+                        <p class="font-semibold text-brand-dark">
+                            We think charging $90+ a year to help a family manage chore lists and calendar events is
+                            absurd.
+                        </p>
+                        <p>
+                            We built <strong>Busy Bees Calendar</strong> to be simple, practical, and affordable. When
+                            you pay for Busy Bees, you get the complete app—every feature, every list, the chore system,
+                            and instant household syncing. No feature locks, no microtransactions, and absolutely no
+                            pop-up ads cluttering your screen.
+                        </p>
+                        <p>
+                            We have zero intention of ever raising our prices anywhere near what competitor apps charge.
+                            We’re here to make family organization easier and stress-free—not to drain your household
+                            budget.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-dark text-amber-100/80 py-10 border-t border-stone-800">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">
+                    🐝</div>
+                <div>
+                    <p class="font-bold text-white text-sm">Busy Bees Calendar</p>
+                    <p class="text-stone-400">© 2026 Derezz Digital LLC. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-6 text-stone-300">
+                <a href="./index.html#features" class="hover:text-amber-400 transition">Features</a>
+                <a href="./pricing.html" class="hover:text-amber-400 transition">Pricing</a>
+                <a href="./index.html#download" class="hover:text-amber-400 transition">Store Links</a>
+                <a href="./privacy.html" class="hover:text-amber-400 transition">Privacy Policy</a>
+                <a href="mailto:support@derezzdigital.com" class="hover:text-amber-400 transition">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
